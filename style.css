@@ -1,0 +1,150 @@
+body { 
+	font-family: Arial; 
+	font-size: 18px; 
+	margin: 0; 
+	padding: 0; 
+}
+.col { 
+	float: left; 
+	margin-right: 5px; 
+}
+.push_left { float: left !important; }
+.push_right { float: right !important; }
+.desktop { display: block; }
+.mobile { display: none; }
+
+#container { 
+	width: 480px; 
+	height: 540px; 
+	position: relative; 
+}
+#canvas_area { 
+	background: url('images/background.jpg') no-repeat; 
+}
+#painel { 
+	background: transparent url('images/eletro.png') no-repeat; 
+	width: 200px; 
+	height: 100px; 
+	position: absolute; 
+	right: 0px; 
+	top: 0px; 
+}
+#pontuacao_div { 
+	width: 85px; 
+	font-size: 35px; 
+	color: #fff; 
+	text-align: center; 
+	margin-top: 38px; 
+	margin-left: 50px; 
+}
+#vidas { 
+	float: left !important; 
+	margin-top: 30px; 
+	margin-left: -1px; 
+}
+.vida { 
+	background: transparent url('images/vida.png') no-repeat; 	
+	width: 16px; 
+	height: 16px; 	
+	margin-bottom: 2px; 	
+}
+	
+
+#final { 
+	background: url('images/final.jpg') no-repeat;
+	width: 480px; 
+	height: 540px; 
+	position: relative; 
+	z-index: 99; 
+	display: none;
+}
+#final #pontuacao_div {
+	margin: 0;
+	padding-top: 350px;
+	padding-left: 280px;
+}
+
+#btn_reinicio {
+	position: absolute;
+	top: 435px;
+	left: 230px;
+}
+
+#btn_menu {
+	position: absolute;
+	top: 486px;
+	left: 286px;
+}
+
+#inicio {
+	background: url('images/inicio.jpg') no-repeat;	
+	text-align: center;
+	width: 480px; 
+	height: 540px; 
+	position: relative; 
+}
+
+#inicio .wrapper {
+	padding-top: 375px;
+}
+
+#inicio .wrapper a {
+	display: block;
+}
+
+#inicio #instructions_btn {
+	margin: 12px 0;
+}
+
+#instructions {
+	background: url('images/instructions.jpg') no-repeat;	
+	text-align: center;
+	width: 480px; 
+	height: 540px; 
+	position: relative; 	
+}
+
+body > #about {
+	background: url('images/about.jpg') no-repeat;	
+	text-align: center;
+	width: 480px; 
+	height: 540px; 
+	position: relative; 	
+}
+
+#back {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+
+
+
+.btn_left {
+	position: absolute;		
+	z-index: 99;
+	left: 10px;
+	bottom: 10px;
+	height: 90px;
+	width: 90px;
+	background: url('images/left.png') no-repeat;
+}
+.btn_right {
+	position: absolute;		
+	z-index: 99;
+	right: 10px;
+	bottom: 10px;	
+	height: 90px;
+	width: 90px;
+	background: url('images/right.png') no-repeat;
+}
+
+@media (max-width: 640px) {
+	.desktop { display: none; }
+	.mobile { display: block; }
+}
+
+
+
+
+
