@@ -12,6 +12,13 @@ Installation
 Download the files and open on your browser index.html
 
 
+Team
+==================
+Edilson Alves (artwork) (edilson.designer@gmail.com)
+Maique Douglas (artwork) (maiquedouglas@gmail.com)
+Felipe Fernandes (development) (eu@felipefernandes.nu)
+
+
 License
 ==================
 
