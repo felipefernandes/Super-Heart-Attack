@@ -538,13 +538,16 @@ $(document).ready(function() {
 	addInimigosPersonagem('cachorro',88, 82);
 	addInimigosPersonagem('pizza',98, 107);
 	addInimigosPersonagem('refri',101, 114);
+	addInimigosPersonagem('bacon',103, 109);
 	addAmigosPesonagem('banana',102, 108);
 	addAmigosPesonagem('brocolis',117, 128);
 	addAmigosPesonagem('morango',105, 129);
 	addAmigosPesonagem('rabanete',58, 128);
+	addAmigosPesonagem('banana',102, 108);
 	addPowerUpPersonagem('cogumelo',1);
 	addPowerUpPersonagem('canabis',2);
 	addPowerUpPersonagem('cafe',3);
+	addPowerUpPersonagem('cogumelo',1);
 
 
 
