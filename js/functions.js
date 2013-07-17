@@ -22,7 +22,7 @@ $(document).ready(function() {
 			draw();
 		}, 1000/FPS);
 
-		Sound.play("soundtrack.mp3");
+		//Sound.play("soundtrack.mp3");
 	}
 
 	init(); //comeca o jogo
@@ -116,14 +116,15 @@ $(document).ready(function() {
 
 	function goPower() {
 
-		if(powerup_activate) {
-			if(DEBUG) { console.log("Executou powerup"); }
+		if(powerup_activate) {			
 			powerup.active = true;	
-			powerup.init();			
+			powerup.init();	
+
+			if(DEBUG) { console.log("Executou powerup"); }		
 		}
 
-		setTimeout(function() { powerup.active = false; }, 6000);
-		setTimeout(function() { powerup_colisao =  false }, 8000);
+		setTimeout(function() { powerup.active = false; }, 8000); //fica ativo por 8s
+		setTimeout(function() { powerup_colisao =  false }, 8000); //fica ativo por 8s
 
 		powerup_activate = false;
 	}
@@ -318,7 +319,8 @@ $(document).ready(function() {
 			return I.x >= 0 && I.x <= CANVAS_WIDTH && I.y >= 0 && I.y <= CANVAS_HEIGHT; 
 		};
 
-		I.personagem =  PERSONAGENS_INIMIGOS[ getRandomInt(PERSONAGENS_INIMIGOS.length) ].nome; //Uncaught TypeError: Cannot read property 'nome' of undefined
+		//I.personagem =  PERSONAGENS_INIMIGOS[ getRandomInt(PERSONAGENS_INIMIGOS.length) ].nome; //Uncaught TypeError: Cannot read property 'nome' of undefined
+		I.personagem =  PERSONAGENS_INIMIGOS[ getRandomInt(PERSONAGENS_INIMIGOS.length) ]; //Uncaught TypeError: Cannot read property 'nome' of undefined
 
 		if (typeof (I.personagem != 'undefined')) {
 			I.sprite =  Sprite(I.personagem); //Sprite("bacon");
@@ -417,6 +419,42 @@ $(document).ready(function() {
 	//	Prêmios
 	//
 
+	PowerUP = [];
+
+
+	function poweup(P) {
+		
+		P = P || {};
+
+		P.active = false;		
+		P.age = Math.floor(Math.random() * 128);
+
+		P.color = "#F28";		
+
+		P.x = CANVAS_WIDTH / 4 + Math.random() * CANVAS_WIDTH / 2;
+		P.y = 0;
+		P.xVelocidade = 0;
+		P.yVelocidade = 2;
+
+		P.personagem =  PERSONAGENS_POWERUPS[getRandomInt(PERSONAGENS_POWERUPS.length)];
+
+		P.width = 90; // A.personagem.w;  //64;
+		P.height = 90; // A.personagem.h;
+
+		this.sprite = Sprite(p.nome);
+		this.tipo = p.tipo;
+
+		// detecta a area útil
+		P.inBounds = function() {	
+			return A.x >= 0 && A.x <= CANVAS_WIDTH && A.y >= 0 && A.y <= CANVAS_HEIGHT; 
+		};
+
+	}
+
+
+
+
+
 	var powerup = {
 		color: "#0EA",
 		x: 240,
@@ -440,6 +478,7 @@ $(document).ready(function() {
 		this.yVelocidade = 2;		
 
 		//atualiza o Sprite
+		//
 		p = PERSONAGENS_POWERUPS[getRandomInt(PERSONAGENS_POWERUPS.length)];
 
 		this.sprite = Sprite(p.nome);
